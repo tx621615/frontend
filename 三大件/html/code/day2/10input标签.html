@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+    
+    <!-- 
+        input标签
+        type属性值不同效果不同
+        type:
+            text
+            password
+            radio
+            checkbox
+            file  选择文件
+            submit
+            reset
+            button
+     -->
+     <!-- input不占单行所以需要br换行 -->
+
+     <!-- input text 
+        placehold占位符提示信息
+    -->
+     昵称: <input type="text" placeholder="请输入用户名"><br>
+     <!-- input password
+        placehold占位符提示信息
+    -->
+     密码: <input type="password" placeholder="请输入密码"><br>
+     <!-- 
+         单选框
+         name,相同的name的多个RADIO才能有单选效果,name有分组效果
+         checked默认属性
+      -->
+     性别:    
+     <input type="radio" name="sex" checked>男 
+     <input type="radio" name="sex">女<br>
+      <!-- 
+          checkbox
+          checked默认选择
+          &nbsp空格
+       -->
+     爱好: 
+     <input type="checkbox" checked>敲代码 
+     <input type="checkbox">熬夜 
+     <input type="checkbox">掉头发<br>
+     <!-- 
+         file
+         multiple  属性多文件选择
+      -->
+     <input type="file" multiple><br>
+     <!-- 
+         三大按钮功能实现要配合form实现
+      -->
+     <input type="submit">
+     <!-- 
+         reset
+         清空默认值
+      -->
+     <input type="reset">
+     <!-- 
+         butto没有功能，配合js使用
+         value 可以添加按钮名字
+      -->
+     <input type="button" value="普通按钮">
+    </form>
+</body>
+</html>

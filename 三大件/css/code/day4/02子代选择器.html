@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 子代选择器不同于后代选择器，只选择子代标签 
+            选择器语法: 选择器1 > 选择器2 {}，选择器个数不仅仅2个，可以多个，但是要遵循对应的逻辑关系
+        */
+        .father > p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <p>小可爱</p>
+        <div>
+            <p>小姐姐</p>
+        </div>
+    </div>
+    <p>大可爱</p>
+</body>
+</html>

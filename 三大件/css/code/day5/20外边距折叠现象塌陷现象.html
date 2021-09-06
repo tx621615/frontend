@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 塌陷现象
+            互相嵌套的块级元素，父子元素紧贴的margin-top会合并作用在父元素上
+            解决方法：
+                1.不紧贴给父元素设置border-top或者padding-top或者加上一行文本，只要分隔就可以了
+                2.给父元素设置overflow:hidden
+                3.父元素转为行内块元素
+                4.设置浮动
+        */
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* border-top: 1px solid #000; */
+            /* padding-top: 1px; */
+            /* overflow: hidden;
+             */
+             display: inline-block;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

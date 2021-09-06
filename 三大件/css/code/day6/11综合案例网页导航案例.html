@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.去除默认margin和padding */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 2.去除小圆点 */
+        ul{
+            list-style: none;
+        }
+        /* 3.li标签浮动 */
+        li{
+            width: 80px;
+            height: 50px;
+            float: left;
+            background-color: #ffc0cb;
+            text-align: center;
+            line-height: 50px;
+        }
+        /* 4.设置a标签大小,点击范围更大，float可以设置宽高 */
+        a{
+            /* 设置宽高其他方法
+                1.block---因为独占一行，但是父元素是li所以看起来还是一行
+                2.inline-block
+            */
+            width: 80px;
+            height: 50px;
+            color: white;
+            text-decoration: none;
+            float: left;
+        }
+        li:hover{
+            background-color: #008000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航的语义复合列表尽管是横着的，但是可以浮动 -->
+    <ul>
+        <li><a href="#">新闻1</a></li>
+        <li><a href="#">新闻2</a></li>
+        <li><a href="#">新闻3</a></li>
+        <li><a href="#">新闻4</a></li>
+        <li><a href="#">新闻5</a></li>
+        <li><a href="#">新闻6</a></li>
+        <li><a href="#">新闻7</a></li>
+        <li><a href="#">新闻8</a></li>
+        
+    </ul>
+
+</body>
+</html>

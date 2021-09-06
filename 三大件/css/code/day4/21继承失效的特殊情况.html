@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浏览器设置了默认样式会让继承失效 */
+        .father{
+            color: red;
+            font-size: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <!-- 正常情况 -->
+        <div class="son">儿子</div>
+        <!-- a标签颜色默认设置蓝色 -->
+        <a href="#">我是一个a标签</a>
+        <!-- h系列的标签的font-size也会继承失效 -->
+        <h1>我是一个h1标签</h1>
+        <!-- div标签的高度和宽度不能继承，但是div默认会独占一行 -->
+        <div class="son1"></div>
+    </div>
+</body>
+</html>

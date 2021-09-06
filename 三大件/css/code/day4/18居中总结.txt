@@ -1,0 +1,7 @@
+
+水平居中：
+    text-align:center 文本，行内元素，行内块元素，在父标签设置
+    margin: 0 auto  块级元素居中，本身设置
+
+垂直居中:
+    line-height单行文本

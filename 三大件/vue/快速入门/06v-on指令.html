@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- v-on指令用于绑定事件，method指令设置函数 -->
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click="doIt">
+        <input type="button" value="v-on简写" @click="doIt">
+        <input type="button" value="双击事件" @dblclick="doIt">
+        <h2 @click="changeFood">  {{food}}</h2>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                food:"西兰花炒鸡蛋"
+            },
+            // 注意这里是methods
+            methods: {
+                doIt:function(){
+                    // 通过this获得data中的数据，而且修改操作执行后，数据会同步更改
+                    // vue中考虑的不是操作dom元素，而是考虑操作数据，因为数据是渲染上去的，数据改变，页面也改变
+                    // 把数据和标签关联，因此修改数据就是修改标签，本质上获得dom元素就是为了修改数据
+                    // console.log(this.food);
+                    alert("aaaa");
+                },
+                changeFood:function(){
+                    this.food+="好好吃";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

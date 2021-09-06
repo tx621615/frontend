@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 300px;
+            height: 300px;
+        }
+        /* 单边margin应用
+            left:让自己右移动
+            right：让右边元素右移
+            top:让自己向下移动
+            bottom让下面元素下移
+        */
+        .green{
+            display: inline-block;
+            background-color: green;
+            margin-left: 100px;
+        }
+
+        .blue{
+            display: inline-block;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="green"></div><div class="blue"></div>
+</body>
+</html>

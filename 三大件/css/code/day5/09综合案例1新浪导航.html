@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            复杂布局顺序
+            从外往内，从上往下
+            每一个盒子样式:
+            1.宽高
+            2.颜色(之后可能需要清除)
+            3.盒子其他部分(注意加了之后删除宽高的一些距离)
+            4.font,color等设置
+        */
+        /* 清楚默认标签的margin和padding */
+        /* 为了紧贴浏览器上部分 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            /* width默认占满一行 */
+            height: 40px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+        }
+        /* 一般使用后代选择器选择标签，避免选择多个 */
+        .box a{
+            width: 80px;
+            height: 40px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            line-height: 40px;
+            color: #4c4c4c;
+            font-size: 12px;
+        }
+        .box a:hover{
+            background-color: #edeef0;
+            color: #ff8400;
+        }
+    </style>
+</head>
+<body>
+    <!-- 空格合并现象，标签的空合并一个，所以需要紧挨 -->
+    <div class="box">
+        <a href="#">新浪导航</a><a href="#">新浪导航</a><a href="#">新浪导航</a><a 
+        href="#">新浪导航</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 400px;
+        height: 400px;
+        background-color: skyblue;
+        font-size: 20px;
+        /* 行高
+            line-height = fontsize + 上间距 + 下间距
+            值
+                valuepm
+                数字(行高为字体大小倍数)
+        */
+        /* 
+            用途1：调整文字上下间距
+            用途2：当恰好等于元素标签的高度的时候，文字正好处于中间，垂直居中(单行，多行会超出)
+            用途3：值为1表示行高正好为字体大小，消除间隙，默认是有间隙的
+        */
+        /* line-height: 400px; */
+        line-height: 1;
+    }
+</style>
+<body>
+    <div class="box">
+        老司机
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background-color:red;
+            /* 浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动 */
+            float: right;
+        }
+        
+        .green{
+            /* 浮动会脱离标准流,但其他元素还在标准流所以会补位*/
+            /* float: right; */
+            background-color: green;
+            /* 浮动级别比标准流元素高，所以会覆盖其他补位的标准流 */
+            /* float: left; */
+            /* 浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动 */
+            float: right;
+        }
+        .blue{
+            background-color: blue;
+            /* 浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动 */
+            float: right;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue">
+    </div>
+</body>
+</html>

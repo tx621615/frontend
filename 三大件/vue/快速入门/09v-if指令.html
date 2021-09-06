@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>div{
+        width: 200px;
+        height: 100px;
+        background-color:red;
+    }</style>
+</head>
+<body>
+    <!-- v-if，值为true显示元素，值为false删除DOM元素，这是和v-show的区别
+        一个操作DOM元素，一个操作CSS，操作CSS更加快
+    -->
+    <div id="app">
+        <input type="button" value="v-if" @click="toggleIsShow">
+        <!-- 一般值不写死，而是使用data数据源中的数据用作表达式 -->
+        <p v-if="isShow">黑马程序员</p>
+        <!-- 还可以写表达式 -->
+        <div></div>
+        <p v-if="isShow==false">黑马程序员</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isShow:false
+            },
+            methods:{
+                toggleIsShow:function(){
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

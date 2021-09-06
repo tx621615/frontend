@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class选择器优先级最高 */
+        /* 不管使用一个还是多个选择器，重要的是对同一个标签写样式 */
+        .orange{
+            color: orange;
+        }
+        p{color: red;}
+    </style>
+</head>
+<body>
+    <!-- 给同一个标签设置不同样式，效果会叠加
+        给同一个标签设置相同样式，效果会覆盖，最后一个有效
+        注意：只有选择器优先级相同才能通过第二个判断，否则取最优先的哪个
+    -->
+    <p class="orange">我是一个p标签</p>
+</body>
+</html>

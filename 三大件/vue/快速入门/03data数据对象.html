@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <h2> {{school.name}} {{school.mobile}} </h2>
+        <ul>
+            <li> {{campus[0]}} </li>
+            <li> {{campus[3]}} </li>
+        </ul>
+    </div>        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            // vue中用到的数据定义在data中,data中可以写复杂数据类型
+            // 对象使用.使用，数组使用下标使用
+            data:{
+                message:"hello tangxin",
+                school:{
+                    name:"黑马程序员",
+                    mobile:"400-618-9090"
+                },
+                campus:["北京校区","上海校区","广州校区","深圳校区"]
+            }
+        })
+    </script>
+</body>
+</html>

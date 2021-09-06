@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 结构伪类选择器写法 */
+        /* 
+            E:一些类似函数
+            函数的东西可以匹配每个父元素的某个子元素，E表示类别
+            比如下面的第一个子元素，类别li
+        */
+
+        /* 找到ul的第一个li标签 */
+        li:first-child{
+            background-color: blue;
+        }
+
+        /* 找到ul的最后一个li标签 */
+        li:last-child{
+            background-color: orange;
+        }
+
+        /* 找到第几个子元素 */
+        li:nth-child(3){
+            background-color: green;
+        }
+
+        /* 找到倒数第几个元素 */
+        li:nth-last-child(3){
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+        <li>我是第6个li</li>
+        <li>我是第7个li</li>
+        <li>我是第8个li</li>
+        <li>我是第9个li</li>
+        <li>我是第10个li</li>
+    </ul>
+</body>
+</html>

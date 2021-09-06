@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 结构伪类选择器多个 */
+        /* 
+            
+        */
+
+        /* 找到所有元素 */
+        /* n代表自然数0-无穷 */
+        /* li:nth-child(n){
+            background-color: green;
+        } */
+
+        /* 找到所有的偶数标签 */
+        /* li:nth-child(2n){
+            background-color: green;
+        } */
+
+        /* li:nth-child(even){
+            background-color: green;
+        } */
+
+        /* 找到所有奇数标签 */
+        /* li:nth-child(2n+1){
+            background-color: green;
+        } */
+        /* li:nth-child(2n-1){
+            background-color: green;
+        } */
+        /* li:nth-child(odd){
+            background-color: green;
+        } */
+
+        /* 找到前5个 
+            格式一定是-n在前,注意负数的结果忽略
+            注意是+
+        */
+        /* li:nth-child(-n+5){
+            background-color: green;
+        } */
+
+        /* 找到后5个 
+            格式一定是n在前,注意负数的结果忽略
+            注意是+
+        */
+        li:nth-child(n+5){
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+        <li>我是第6个li</li>
+        <li>我是第7个li</li>
+        <li>我是第8个li</li>
+        <li>我是第9个li</li>
+        <li>我是第10个li</li>
+    </ul>
+</body>
+</html>

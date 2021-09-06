@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 把所有标签的共性用标签选择器选中 */
+        /* 背景颜色有可能是背景图片替换，颜色的更替可能是图片的更替 */
+        a{
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            width: 120px;
+            height: 58px;
+            text-align: center;
+            /* 在调试器中调好在设置 */
+            line-height: 50px;  
+            font-size: 20px;
+        }
+        .a1{
+            /* 背景图片大小等于block大小 */
+            background: url(./images/bg1.png);
+        }
+        .a2{
+            background: url(./images/bg2.png);
+        }
+        .a3{
+            background: url(./images/bg3.png);
+        }
+        .a4{
+            background: url(./images/bg4.png);
+        }
+        /* 看着是颜色的替换其实也可以是背景颜色替换，只要背景颜色不同即可 */
+        .a1:hover{
+            background: url(./images/bg5.png);
+        }
+        .a2:hover{
+            background: url(./images/bg6.png);
+        }
+        .a3:hover{
+            background: url(./images/bg7.png);
+        }
+        .a4:hover{
+            background: url(./images/bg8.png);
+        }
+    </style>
+</head>
+<body>
+    <!-- 不规则形状可以设置背景图片确定 -->
+        <a href="#" class="a1">五彩导航</a>
+        <a href="#" class="a2">五彩导航</a>
+        <a href="#" class="a3">五彩导航</a>
+        <a href="#" class="a4">五彩导航</a>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            /* width默认占满一行 */
+            height: 40px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+        }
+        /* 一般使用后代选择器选择标签，避免选择多个 */
+        .box a{
+            /* a标签不设置宽度，宽度会随内容撑大，如果宽度不能容纳内容，会换行，这么看起来应该不设置宽度 */
+            /* width: 80px; */
+            height: 40px;
+            /* 所有a挨到一起，可以添加padding拉开距离 */
+            padding: 0px 20px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            line-height: 40px;
+            color: #4c4c4c;
+            font-size: 12px;
+        }
+        .box a:hover{
+            background-color: #edeef0;
+            color: #ff8400;
+        }
+    </style>
+</head>
+<body>
+    <!-- 空格合并现象，标签的空合并一个，所以需要紧挨 -->
+    <div class="box">
+        <a href="#">新浪导航</a><a href="#">新浪导航</a><a href="#">新浪导航新浪导航新浪导航新浪导航新浪导航新浪导航</a><a 
+        href="#">新浪导航</a>
+    </div>
+</body>
+</html>

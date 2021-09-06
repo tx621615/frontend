@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        label标签
+        常用于绑定内容与表单标签的关系
+    -->
+
+    <!-- 第一种方法 
+        表单标签添加id,然后在label的for属性中加入id
+    -->
+    爱好:
+    <input type="checkbox" id="one"><label for="one">敲代码</label>
+    <input type="checkbox"  id="two"><label for="two">熬夜</label>
+    <!-- 第二种方法
+    label标签包住整个表单标签
+    -->
+    <label>
+        <input type="checkbox" id="one">敲代码
+    </label>
+    <label>
+        <input type="checkbox"  id="two">熬夜
+    </label>
+
+</body>
+</html>

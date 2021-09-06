@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 
+            选择器1 选择器2(还可以多个选择器){
+
+            }
+            这个的含义是在选择器1的后代中找选择器2的标签
+            前面的选择器都是用来筛选，最后一个选择器绝对最终标签
+        */
+        .father p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <p>小姐姐</p>
+    </div>
+    <p>小可爱</p>
+</body>
+</html>

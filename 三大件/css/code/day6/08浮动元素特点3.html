@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .red{
+            background-color:red;
+            float: left;
+        }
+        
+        .green{
+            background-color: green;
+            float: left;
+        }
+        .blue{
+            background-color: blue;
+            float: left;
+        }
+        span{
+            /* 浮动元素可以设置宽高 */
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid #000;
+            /* 浮动元素使用就是为了放到左和右，因此水平居中的属性设置没用，但是元素内容可以居中 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 浮动元素脱离标准流，因此不再使用标准流规则
+        块元素可以一行多个
+        其他元素可以设置宽高
+    -->
+    <!-- <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div> -->
+    <span>我平时</span>
+    <span>我平时</span>
+    <span>我平时</span>
+</body>
+</html>

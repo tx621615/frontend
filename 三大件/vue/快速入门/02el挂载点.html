@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.Vue会管理el选项命中的元素及其内部的后代元素 -->
+    <div id="app" class="box">
+        {{message}}
+        <span>{{message}}</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            // 2.所有选择器都可以使用,但是建议使用id选择器
+            // 3.适用于所有的双标签除了body和html
+            el: '#app',
+            // el:"div",
+            // el:".box",
+            data: {
+                message: '黑马a !'
+            }
+        })
+    </script>
+</body>
+</html>
