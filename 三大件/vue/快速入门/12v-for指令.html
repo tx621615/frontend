@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="add" @click="add">
+        <input type="button" value="remove" @click="remove">
+        <ul>
+            <!-- v-for用来动态生成多个标签，同时根据数据来渲染不同标签 -->
+            <li v-for="(item,index) in arr">
+                <!-- item指的是元素值，不是索引,需要索引可以使用(item,index) -->
+                <!-- v-for里面的每一项的值和索引可以用到其他指令里面 -->
+                {{index + 1}}{{item}}
+
+            </li>
+        </ul>
+        <!-- v-for指令除了配合数组使用还可以配合对象使用 -->
+        <h2 v-for="item in objArr">
+            {{item.name}}
+        </h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                arr: ['上海','深圳','广州','北京'],
+                objArr:[
+                    {name:"西兰花炒蛋"},
+                    {name:"蛋炒西兰花"}
+                ]
+            },
+            methods:{
+                // v-for指令中，数组元素动态变化可以实时反应，效果好像重新刷新
+                add:function(){
+                    this.objArr.push({name:"西红柿炒蛋"});
+                },
+                remove:function(){
+                    this.objArr.shift();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

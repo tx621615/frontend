@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on绑定多个形参的函数 -->
+        <input type="button" value="点击" @click="sayHello('老铁','再见')">
+        <!-- v-on绑定事件修饰符,keyup键弹起,加一个enter修饰符表示哪个键弹起-->
+        <!-- 不用在向以前一样根据事件参数获得到底是哪个键了，直接加一个修饰符就能很快解决 -->
+        <input type="text" @keyup.enter="sayHi">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            },
+            methods:{
+                sayHello:function(p1,p2){
+                    console.log("你好");
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi:function(){
+                    alert("吃了没");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

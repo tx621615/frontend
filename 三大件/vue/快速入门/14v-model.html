@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model指令把表单元素的值和data双向绑定，无论改变那边的值，另一边也会同步改变 -->
+        <input type="button" value="改变data" @click="setM">
+        <input type="text" v-model="message">
+        <h2>{{message}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            },
+            methods:{
+                setM:function(){
+                    this.message += this.message;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
