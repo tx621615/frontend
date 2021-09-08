@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // window是顶级对象，下面有document对象
+        // 全局作用域声明的变量和函数会自动成为window的属性和方法，方法的调用可以省略window
+        // window有一个特殊的属性window.name,所以最好不要声明全局变量名为name
+        // window.document.querySelector()
+        var num = 10;
+        console.log(num);
+        console.log(window.num);
+
+        function fn() {
+            console.log(11);
+
+        }
+        fn();
+        window.fn();
+        // alert(11);
+        // window.alert(11)
+        console.dir(window);
+        // var name = 10;
+        console.log(window.name);
+    </script>
+</body>
+
+</html>

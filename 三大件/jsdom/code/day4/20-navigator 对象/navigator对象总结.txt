@@ -1,0 +1,1 @@
+通过navigator对象可以获得user-agent值，从而知道是PC端还是Mobile端

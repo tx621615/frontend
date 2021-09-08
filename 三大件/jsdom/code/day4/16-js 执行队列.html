@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- js是单线程语言（执行线程只有一个，不是内部线程），只有一个主线程执行任务，但是可以通过主队列和一个异步队列来快速执行任务，避免一些任务等待时间过长
+        js会顺序执行主队列任务，遇到事件函数，加载函数，定时器函数就会把这些任务交给异步处理进程，该进程等到这些触发才会把任务放到异步队列
+        js会等待主队列为空时，才从异步队列取任务执行---这就是事件循环
+    -->
+    <script>
+        // 第一个问题
+        console.log(1);
+
+        setTimeout(function() {
+
+            console.log(3);
+
+        }, 1000);
+
+        console.log(2);
+
+        // 2. 第二个问题
+        // console.log(1);
+
+        // setTimeout(function() {
+
+        //     console.log(3);
+
+        // }, 0);
+
+        // console.log(2);
+
+        // 3. 第三个问题
+
+        // console.log(1);
+        // document.onclick = function() {
+        //     console.log('click');
+        // }
+        // console.log(2);
+        // setTimeout(function() {
+        //     console.log(3)
+        // }, 3000)
+    </script>
+</body>
+
+</html>

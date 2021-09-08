@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/angel.gif" alt="">
+    <script>
+        // 1.鼠标移动事件的事件源，因为是页面所以使用document
+        // 2.获取事件对象，得到鼠标的属性，然后把图片移动到这个坐标，使用绝对定位，绝对定位如果父节点没有定位默认相对document,因此document也不用设置relative了
+        var img = document.querySelector("img");
+        document.addEventListener("mousemove", function(e){
+            x = e.pageX;
+            y = e.pageY;
+            // 注意要加px,因为不是正好在鼠标中间，所以加一些偏移值
+            img.style.top = y - 40 + "px";
+            img.style.left = x - 48 + "px";
+        })
+    </script>
+</body>
+
+</html>
