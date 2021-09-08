@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul和div都是块元素，li是浮动元素，脱离了标准流，所以父级块元素不能撑开，高度为0 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 250px;
+            margin: 100px auto;
+            background: pink;
+        }
+
+        li{
+            /* 消除小圆点 */
+            list-style-type: none;
+        }
+        .box li{
+            float: left;
+            width: 24px;
+            height: 24px;
+            background-color: pink;
+            margin: 15px;
+            background: url(images/sprite.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var lilist = document.getElementsByTagName("li");
+        for(var i = 0;i < lilist.length; i++)
+        {
+            // 注意精灵图的使用，值是负值，精灵图其实只有一张，因此传递过去的时候只有一次请求，但是显示的时候要利用八张
+            // 如果不是精灵图的话，使用八张传递八张
+            // 位置是图片左上角相对元素左上角的位置
+            lilist[i].style.backgroundPositionY = -44 * i + "px";
+        }
+    </script>
+</body>
+</html>

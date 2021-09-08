@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="手机">
+    <script>
+       var input = document.querySelector("input");
+    //      需要加两个条件，避免正常输入内容的时候聚焦和移开都删除内容
+       input.onfocus = function(){
+           if(this.value == "手机"){
+            this.value = "";
+           }
+        //    聚焦的时候字体颜色变粗
+            this.style.color = "#000";
+       }
+       input.onblur = function(){
+           if(this.value == ""){
+            this.value = "手机";
+
+           }
+        //    失焦字体颜色变淡
+           this.style.color = "#999";
+       }
+    </script>
+
+</body>
+
+</html>

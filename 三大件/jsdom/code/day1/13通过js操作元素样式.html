@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        div.onclick = function(){
+            // 可以通过js来改变元素的样式，本质是设置行内样式，行内样式优先级最高
+            // 通过style的子属性来改变并添加样式
+            this.style.width = "500px";
+            this.style.backgroundColor = "skyblue";
+        }
+    </script>
+</body>
+</html>

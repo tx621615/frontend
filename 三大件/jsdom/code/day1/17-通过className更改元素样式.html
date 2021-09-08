@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        /* 想要修改的样式 */
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        var div = document.querySelector("div");
+        div.onclick = function(){
+            // 当需要修改的style属性比较少的时候，可以通过style属性修改，但是比较多的时候建议单独生成一个类，然后把元素的类名改为对应的类名或者+上该类名
+            // 因为直接赋值会覆盖原先类名
+            var oldname = this.className;
+            var newname = "change"; 
+            this.className = oldname + " " + newname;
+        }
+        
+    </script>
+</body>
+
+</html>

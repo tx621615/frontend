@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+        <li>知否知否，应是等你好久11</li>
+
+    </ul>
+    <ol id="ol">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+
+    </ol>
+    
+    <script>
+        // 根据标签名字获取所有标签，返回一个伪数组
+        // 返回值都是数组
+        // 没有该标签，返回一个空的伪数组
+        var lilist = document.getElementsByTagName("li");
+        console.log(lilist)
+        for(var i = 0;i < lilist.length; i++){
+            console.log(lilist[i]);
+        }
+
+        // element.getElementByTagName()可以获得父元素下的某些子元素，注意对象必须是element对象，不能是数组，所以一般通过getId先获取父元素
+        // 如果通过getTag获得父元素，则必须通过下标指明哪个父元素，哪怕元素只有一个
+        // 注意一下区别
+        var ol = document.getElementById("ol");
+        console.log(ol.getElementsByTagName("li"))
+
+        var ollist = document.getElementsByTagName("ol");
+        console.log(ollist[0].getElementsByTagName("li"));
+    </script>
+</body>
+
+</html>

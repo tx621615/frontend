@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 测试子元素是否可以直接获取到,还是需要通过父元素获取 -->
+    <!-- 可以直接获取到,但是通过先获取到父元素在获取子元素可以更加准确 -->
+    <div class="father">
+        <p class="son"></p>
+    </div>
+    <script>
+        // 可以
+        var son = document.querySelector(".son");
+        console.log(son);
+
+        //也可以
+        var son1 = document.getElementsByTagName("p");
+        console.log(son1[0]);
+    </script>
+</body>
+</html>

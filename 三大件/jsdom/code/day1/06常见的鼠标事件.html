@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+            onclick
+            onmouseover 鼠标经过
+            onmouseout  鼠标离开
+            onfocus     聚焦
+            onblur  失焦
+            onmousemove 鼠标移动
+            onmouseup   鼠标弹起
+            onmousedown 鼠标按下 -->
+
+
+    <button id="btn">我是一个button</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        // btn.onmouseover = function(){
+        //     alert("鼠标经过触发");
+        // }
+        // btn.onmouseout = function(){
+        //     alert("鼠标离开触发");
+        // }
+        // 移动和经过的效果类似
+        // btn.onmousemove = function(){
+        //     alert("鼠标移动触发");
+        // }
+        // btn.onmouseup = function(){
+        //     alert("鼠标点击弹起触发");
+        // }
+        // btn.onmousedown = function(){
+        //     alert("鼠标按下触发");
+        // }
+        // 点击和按下触发不一样，点击包含一次按下弹起的过程
+        btn.onclick = function(){
+            alert("鼠标点击触发");
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>效率测试</title>
+</head>
+
+<body>
+</body>
+<script>
+    function fn() {
+        var d1 = +new Date();
+
+        var str = '';
+        for (var i = 0; i < 1000; i++) {
+            // 因为string是不可变类型,因此拼接一次申请一次内存,所以速度慢,但是改成不是拼接就快了,相当于渲染引擎直接解析
+            document.body.innerHTML += '<div style="width:100px; height:2px; border:1px solid blue;"></div>';
+        }
+        var d2 = +new Date();
+        console.log(d2 - d1);
+    }
+    fn();
+</script>
+
+</html>

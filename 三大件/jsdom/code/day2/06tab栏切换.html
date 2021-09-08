@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+        li {
+            list-style-type: none;
+        }
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        .item_info {
+            padding: 20px 0 0 20px;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价（50000）模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+
+        </div>
+    </div>
+    <script>
+        // tab栏切换思路
+        // 1.主题和内容一一对应
+        // 2.排他思想，只展现一个思想，先把全部置空然后在设置某一个，一般是本身
+        // 3.为什么要给标签打个标记，因为在该标签的触发事件中需要用到该标记，因此需要打，而外部for循环的索引在设置完成后就没了，所以需要事先保存
+        // 使用自定义数据原因是为了保存和使用数据
+        var lilist = document.querySelector(".tab_list").querySelectorAll("li");
+        var divs = document.querySelector(".tab_con").querySelectorAll("div");
+
+        for(var i = 0;i < lilist.length; i++){
+            // 设置index的原因是可以找到对应div的下标来修改.
+            lilist[i].setAttribute("index", i);
+            lilist[i].onclick = function(){
+                for(var j = 0;j < lilist.length; j++){
+                    lilist[j].className = "";
+                }
+                this.className = "current";
+
+                for(var j = 0;j < divs.length; j++){
+                    divs[j].style.display = "none";
+                }
+                divs[this.getAttribute("index")].style.display = "block";
+            }
+            
+        }
+    </script>
+</body>
+</html>

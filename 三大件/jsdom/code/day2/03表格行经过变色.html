@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 800px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            /* 让td继承这个属性，th不会继承因为已经默认设置了其他居中属性值了 */
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px; 
+        }
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+        tbody tr {
+            height: 30px;
+        }
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+        /* 通过设置classname来改变样式 */
+        .bg {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var trs = document.querySelector("tbody").querySelectorAll("tr");
+        // 易错点，querySelectorAll不是querySelector,trs是一个伪数组，不能直接使用
+        // for(var i = 0; i < trs.length; i++){
+        //     trs[i].onmouseover = function(){
+        //         this.className = "bg";
+        //     }
+
+        //     trs[i].onmouseout = function(){
+        //         this.className = "";
+        //     }
+        // }
+
+        // 尝试排他实现,首尾元素的离开不能让其失效
+        for(var i = 0;i < trs.length; i++){
+            trs[i].onmouseover = function(){
+                for(var j = 0; j < trs.length; j++){
+                    trs[j].className = "";
+                }
+                // 在自身的绑定函数时，使用自己最好使用this,否则貌似不生效,使用trs[i]会无效的原因是此时i没有变量了
+                this.className = "bg";
+            }
+        }
+    </script>
+</body>
+</html>

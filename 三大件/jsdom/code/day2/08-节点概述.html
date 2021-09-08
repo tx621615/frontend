@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <!-- 页面中所有元素都是节点
+        元素节点: nodetype-1
+        属性节点:nodetype-2
+        文字节点:nodetype-3包括文字,换行,空格
+        每个节点都必须要有三个属性,nodeName,nodeType,nodeValue
+        使用最多的是元素结点
+    -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        console.dir(box);
+    </script>
+</body>
+
+</html>

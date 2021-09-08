@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(images/1.jpg) no-repeat center top;
+        }
+        li {
+            list-style: none;
+        }
+        .baidu {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+        <!-- 百度换肤特效
+            点击某个图片，对应的背景图片变为这个
+            实际上把图片地址保存在了图片，同时触发事件把body的bgi地址替换为该图片地址
+        -->
+    <ul class="baidu">
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+    </ul>
+
+    <script>
+        // 获取元素的方法可以嵌套
+        var lilist = document.querySelector(".baidu").querySelectorAll("img");
+        // 多个相同标签相同事件的绑定可以使用for循环
+        for(var i = 0;i < lilist.length; i++){
+            lilist[i].onclick = function(){
+                var url = this.src;
+                console.log(url);
+                document.body.style.backgroundImage = "url(" + url + ")";
+            }
+        }
+    </script>
+
+</body>
+</html>
