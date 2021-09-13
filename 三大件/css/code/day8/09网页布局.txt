@@ -1,0 +1,10 @@
+header网页头部
+nav导航
+footer尾部
+aside侧边栏
+section网页区块
+article网页文章
+
+以上元素都是块级元素，比div仅多了语义
+以上都是常见的语义布局标签
+div和span也是布局标签

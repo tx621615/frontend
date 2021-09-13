@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//ES6语法前
+	function fn(name) {
+		var name = name ? name : ''
+	}
+	//ES6语法后
+	function fn(name='悟空', sex="公") {
+		console.log(name, sex)
+	}
+	fn()
+	fn('其他')
+	fn('八戒', '母')
+	</script>
+</body>
+</html>

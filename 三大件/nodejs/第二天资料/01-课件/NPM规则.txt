@@ -1,0 +1,11 @@
+npm   install mime   （1-在当前目录下，   2-修改package.json）    注：默认--save
+npm uninstall mime   （1-在当前目录下移除，2-修改package.json）
+
+问：--save和--save-dev区别
+答：共同点-都会在当前目录下创建文件，不同点：修改package.json一个是生产环境一个开发环境
+
+问：加-g参数区别
+答：在npm config list的--prefix目录下安装，2-在命令行可以执行
+
+问：npm install 和 npm install --production
+答：全部安装，  后者只安装生产环境

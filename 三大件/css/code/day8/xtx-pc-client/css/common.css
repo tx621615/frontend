@@ -1,0 +1,135 @@
+/* 版心的公共类 */
+.container{
+    width: 1240px;
+    margin: 0 auto;
+}
+/* 快捷菜单模块:xtx-shortcut */
+.xtx-shortcut{
+    height: 52px;
+    background-color: #333;
+}
+
+.xtx-shortcut .container{
+    height: 52px;
+    /* background-color: skyblue; */
+}
+
+.xtx-shortcut ul li{
+    float: left;
+    line-height: 52px;
+    color:#666;
+}
+
+.xtx-shortcut ul a{
+    margin: 0 16px;
+    color: #dcdcdc;
+    font-size: 14px;
+}
+
+/* 这里直接使用last-child
+    nth-last-child()才需要加参数
+*/
+.xtx-shortcut li:last-child a{
+    margin-right: 0;
+}
+
+.xtx-shortcut li:last-child a::before{
+    content: "";
+    /* 默认是inline不能设置宽高 */
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    margin-right: 8px;
+    margin-top: -3px;
+    /* background-color: red; */
+    /* 注意这里要连写，不能只写bgi否则会出错爆出三角形 */
+    background: url(../images/sprites.png) -160px -70px;
+    /* inline-block不在对齐基线,只有非块元素才会对不齐 */
+    vertical-align: middle; 
+}
+
+/* 主导航模块: xtx-main-nax */
+.xtx-main-nav{
+    /* 单个属性是设置内容的高度,不是整体高度 */
+    height: 130px;
+    /* 设置padding-top隔开内容和边界的距离 */
+    /* 治理隔开距离不设置margin属性 */
+    padding-top: 30px;
+    /* 设置了padding会撑大盒子,设置box-sizing属性 */
+    box-sizing: border-box;
+    background-color: pink;
+}
+
+/* 主导航的logo模块 */
+.xtx-main-nav .logo{
+    width: 207px;
+    height: 70px;
+    /* 左侧偏移 */
+    margin-left: 25px;
+    /* 设置整个logo和右边li距离 */
+    margin-right: 40px;
+}
+
+/* 70px */
+.xtx-main-nav .logo a{
+    /* a标签是inline但是需要设置高度 */
+    display: block;
+    height: 70px;
+    background: url(../images/logo.png);
+    background-size: 100% 100%;
+
+    font-size: 0;
+}
+
+/* 主导航的导航模块 */
+.xtx-main-nav nav li{
+    float: left;
+    height: 70px;
+    margin-right: 48px;
+    line-height: 70px;
+}
+
+.xtx-main-nav nav a:hover{
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+    padding-bottom: 7px;
+}
+
+
+/* 主导航的search栏的实现*/
+.xtx-main-nav .search{
+    position: relative;
+    width: 172px;
+    height: 30px;
+    /* 离上面54px，减去padding30px */
+    margin-top: 24px;
+    /* 离左边li标签距离82px,li的margin-right=48px */
+    margin-left: 34px;
+    background-color: orange;
+}
+
+/* 查询栏设置 */
+/* input是inlien-box */
+.xtx-main-nav .search input{
+    
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+    /* 内容和边框存在距离29px */
+    padding-left: 31px;
+}
+
+/* 设置放大镜 */
+/* 多了一个元素，同时input不能放置，因此放到div栏中，因为是覆盖所以使用定位 */
+.xtx-main-nav .search::before{
+    /* 必须要设置content属性,之前忘了出错 */
+    content: "";
+    /* 注意父亲是谁 */
+    position: absolute;
+    /* 绝对位置可以微调 */
+    top: 5px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/sprites.png) -80px -70px;
+}

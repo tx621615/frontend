@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 定义一个学生类（姓名-张三，年龄-18）
+		// ES5
+		function Stu(name, age) {
+			var nickname = '武大郎'
+			//this公开的 ，var 私有的
+			this.name = name
+			this.age = age 
+
+			this.sayName = function() {
+				return this.name
+			}
+		}
+
+		var stuObj = new Stu('潘金莲', 88)
+		console.log(stuObj)
+		console.log(stuObj.name)
+		console.log(stuObj.age)
+		console.log(stuObj.sayName())
+
+		console.log('-----')
+
+		//ES6
+		class Stu2
+		{
+			constructor(name, age) {
+				this.name = name
+				this.age = age 
+			}
+			sayName() {
+				return this.name
+			}
+		}
+		var stuObj = new Stu2('潘金莲', 88)
+		console.log(stuObj)
+		console.log(stuObj.name)
+		console.log(stuObj.age)
+		console.log(stuObj.sayName())
+
+	</script>
+</body>
+</html>

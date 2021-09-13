@@ -1,0 +1,89 @@
+/* 基础公共样式，去除浏览器默认样式，设置为当前项目需要的初始化样式 */
+/* 去除常见标签默认的 margin 和 padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置网页统一的字体大小、行高、字体系列相关属性 */
+/* font连写  style weight size/line-height family(前面两项可省略) sans-serif---无衬线字体，笔画粗细均匀*/
+body {
+  font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+    "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: #333;
+}
+
+/* 去除列表默认样式 */
+/* 去除原点和序号 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 去除默认的倾斜效果 */
+/* 这两个是倾斜标签，设置后不在倾斜 */
+em,
+i {
+  font-style: normal;
+}
+
+/* 去除a标签默认下划线，并设置默认文字颜色 */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 设置img的垂直对齐方式为居中对齐，去除img默认下间隙,div此时是由img撑开，但是留下了对齐文本的baseline */
+img {
+    /* baseline,top,middle,bottom */
+  vertical-align: middle;
+}
+
+/* 去除input默认样式 */
+input {
+    /* 无边框 */
+  border: none;
+  /* 选中无轮廓线 */
+  outline: none;
+  /* 字体颜色 */
+  color: #333;
+}
+
+/* 左浮动 */
+.fl {
+  float: left;
+}
+
+/* 右浮动 */
+.fr {
+  float: right;
+}
+
+/* 浮动元素不能撑开原来的父元素，所以父元素可能高度或者宽度为0 */
+/* 双伪元素清除法 */
+/* before避免父子块级元素margin-top塌陷问题，解决了父子紧挨在一起的问题 */
+.clearfix::before,
+.clearfix::after {
+    /* 没有内容 */
+  content: "";
+  /* 块级元素table比块含义更多 */
+  display: table;
+}
+.clearfix::after {
+    /* 可以清除浮动影响 */
+  clear: both;
+}

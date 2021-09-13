@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+        }
+        .red{
+            background-color: red;
+        }
+            
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+            position: relative;
+            /* 相对定位
+                相对自己之前位置进行移动
+                在页面中占位置
+            */
+            /* 表示距离之前上边界100px */
+            top: 100px;
+            /* 距离之前左边界100px */
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 让一个盒子覆盖另一个盒子的四分之一-->
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+</body>
+</html>

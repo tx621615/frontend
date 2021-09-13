@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//需求：通过ES6语法仿写下数数组  3个参数，1个参数，没有参数
+	//function fn(name, age, sex) {
+		// console.log('函数没毛病')
+	// }
+	
+	//旧语法：function fn(形参1,...,形参n) {}
+	//新语法：(形参1,...,形参n) => {}
+	//脚下留心：只有一个形参小括号可以不写，函数体只有一行代码大括号可以不写
+	
+	var fn0 = ()   		=> console.log('函数没毛病')
+	var fn1 = name		 => console.log('函数没毛病')
+	var fn2 = (name,age) => console.log('函数没毛病')
+
+	fn0()
+	fn1('测试1')
+	fn2('测试2', 18)
+	</script>
+</body>
+</html>

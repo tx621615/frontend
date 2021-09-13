@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var fn1 = [];
+	for (var i = 0; i < 10; i++) {
+	  fn1[i] = function () {
+	    console.log(i);
+	  };
+	}
+	fn1[6](); // ？？？？？  i=0-9   10
+	// var fn2 = [];
+	// for (let i = 0; i < 10; i++) {
+	//   fn2[i] = function () {
+	//     console.log(i);
+	//   };
+	// }
+	// fn2[6](); // ？？？？？
+	</script>
+</body>
+</html>

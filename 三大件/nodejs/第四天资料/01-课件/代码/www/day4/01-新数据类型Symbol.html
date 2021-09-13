@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新数据类型</title>
+</head>
+<body>
+	<script>
+	//作用：生成一个独一无二的值
+	//无值   
+	var str1 = Symbol()
+	var str2 = Symbol()
+	console.log(str1 === str2) //false
+	//有值 
+	var str1 = Symbol("itcast")
+	var str2 = Symbol("itcast")
+	console.log(str1 === str2) //false
+	</script>
+</body>
+</html>

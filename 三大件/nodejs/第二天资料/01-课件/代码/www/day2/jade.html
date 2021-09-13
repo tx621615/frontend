@@ -1,0 +1,38 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+	body
+		//  注释会显示 
+		//- 注释不显示
+			HTML标签语法： <标签名 属性n=属性值n>内容</标签名>
+			jade模板规则：
+				标签名直接写
+				括号里面是属性
+				class用数组写法
+				-标识js代码
+				#{变量名}  输出数据
+				等
+		div(id='div1',style='width:300px;height:30px;background:red;') hello div1
+		div(class='div2') hello div2
+		div(class=['div3','div']) hello div3
+
+		p
+			- var a= 1
+			- var b= 1
+			p 计算结果是：#{a+b}
+
+		p 用户名：#{username}，年龄：#{age}
+
+		- if (age > 18)
+			p 111
+		- else
+			p 222
+
+
+		- for (index in orders)
+			p #{index} __ #{orders[index].title}
+
+		ul
+			- each order, index in orders
+				li #{index} __ + #{order.title}

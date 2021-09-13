@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+        }
+       /* 静态定位就是之前的标准流，设置偏移值没有作用
+            默认定位就是position:static
+       */
+        .red{
+            background-color: red;
+        }
+        .blue{
+            position: static;
+            background-color: blue;
+            /* 静态定位没有效果 */
+            top: 150px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 让一个盒子覆盖另一个盒子的四分之一-->
+    <div class="red"></div>
+    <div class="blue"></div>
+</body>
+</html>

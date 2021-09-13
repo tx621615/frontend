@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var str = 'itcast_'
+	console.log(str.repeat(3))
+
+	var name = '你好'
+	//旧方法
+	var html = ''
+	html += '<ul>'
+	html += '<li>第'+name+'个</li>'
+	html += '<li>第二个</li>'
+	html += '</ul>'
+	console.log(html)
+
+	//新的方法
+	var html = `<ul>
+		<li>第${name}个</li>
+		<li>第二个</li>
+	</ul>
+	`
+	console.log(html)
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+        }
+        /* 使用定位的方式
+            1.设置定位的方式
+            position
+                static
+                absolute
+                relative
+                fixed
+            2.设置偏移值
+                top,right,bottom,left
+            注意定位的参考系都是某个上下左右边界
+                top指某个上边界
+                left指某个左边界
+            */
+        .red{
+            background-color: red;
+        }
+        .blue{
+            position: absolute;
+            background-color: blue;
+            top: 150px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 让一个盒子覆盖另一个盒子的四分之一-->
+    <div class="red"></div>
+    <div class="blue"></div>
+</body>
+</html>

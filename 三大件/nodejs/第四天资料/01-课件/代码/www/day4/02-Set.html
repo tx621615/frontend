@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 初始化set类型值为1/2/3->统计->添加值4->统计->清除->统计
+	var set = new Set([1,2,3])
+	console.log(set.size)  //3
+
+	set.add(4)
+	console.log(set.size)  //4
+	set.clear()
+	console.log(set.size)  //0
+
+	console.log('------------')
+	// 练习：通过set类型将数组1/2/3/4/3/4/5值去重
+	// 去重：new Set([1,2,3,4,3,4,5])  返回的set对象
+	// 复制：[...Set对象]  会将里面的值挨个赋给数组成员
+	var arr = [...new Set([8,1,2,3,4,3,4,5])]
+	console.log(arr)
+	</script>
+</body>
+</html>

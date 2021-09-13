@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// function fn() {
+	// 	console.log(arguments) //获取所有实参，不确定实参个数
+	// 	for (var i = 0; i<arguments.length;i++) {
+	// 		console.log(arguments[i])
+	// 	}
+	// }
+	// fn(2,3,4,56)
+	
+	//脚下留心：不加... 则将第一个实参赋值给vals
+	//			  加...则将所有值赋给vals 是个数组
+	function fn(...vals) {
+		console.log(vals)
+	}
+	fn(2,3,4,56)
+
+	console.log('---------')
+	
+	//问：rest参数和arguments区别
+	//答：rest参数更加灵活
+	function fn2(val, ...vals) {
+		console.log(val)
+		console.log(vals)
+	}
+	fn2(2,3,4,56)
+
+	</script>
+</body>
+</html>

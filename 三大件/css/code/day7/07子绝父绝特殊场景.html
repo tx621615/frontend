@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      /* 子绝父绝的场景，
+        当父亲已经是绝对定位的时候，不能更改为相对定位
+        此时使用子绝父绝 */
+    .father {
+      /* 父相 */
+      position: relative;
+
+      width: 600px;
+      height: 600px;
+      background-color: pink;
+    }
+
+    .son {
+      /* 子绝 */
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+    }
+
+  .sun {
+    /* 子绝 */
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">
+      <div class="sun"></div>
+    </div>
+  </div>
+</body>
+</html>

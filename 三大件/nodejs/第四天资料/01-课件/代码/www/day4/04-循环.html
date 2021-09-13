@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//for   while  do...while
+	var arr = ['a', 'b', 'c'];
+	for (var i=0; i < arr.length; i++) {
+		console.log('键：', i+1, '值：', arr[i])
+	}
+	//数组.forEach  只能遍历数组
+	var arr = ['a', 'b', 'c'];
+	arr.forEach(function(item, index){
+		console.log('键：', index+1, '值：', item)
+	})
+	//for...in  推荐遍历对象（因为数组时，下标字符串  可能会以后结果）
+	var arrs = ['a', 'b', 'c'];
+	for (var index in arrs) {
+		console.log('键：', index+1, '值：', arrs[index])
+	}
+	console.log('---')
+	//for...of
+	var arrs = ['a', 'b', 'c'];
+	for (var val of arrs) {
+		console.log('值：', val)
+	}
+	var set = new Set([1,2,3,4,5])
+	for (var val of set) {
+		console.log('值：', val)
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- 设置语言为中文 -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置网页标题 -->
+    <title>小兔鲜儿-新鲜、惠民、快捷！</title>
+    <!-- 设置网页描述 -->
+    <meta name="description" content="小兔鲜儿官网，致力于打造全球最大的食品、生鲜电商购物平台。">
+    <!-- 设置网页关键字 -->
+    <meta name="keywords" content="小兔鲜儿,食品,生鲜,服装,家电,电商,购物">
+    <!-- 设置网页图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入css文件,注意css文件顺序,先引base文件 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 头部模块 -->
+    <header>
+        <!--  快捷菜单模块-->
+        <div class="xtx-shortcut">
+            <!-- 因为有导航的语义所以使用nav而非div -->
+            <nav class="container">
+                <!-- 注意整个ul靠li撑开，一般宽度没有整个nav的宽度,而且不设置浮动的时候，高度为0，尽管有效果，设置浮动转为BFC盒子即可消除浮动效果，所以初始在左边因此需要设置右浮动 -->
+                <ul class="fr">
+                    <li><a href="#">请先登录</a>|</li>
+                    <li><a href="#">免费注册</a>|</li>
+                    <li><a href="#">我的订单</a>|</li>
+                    <li><a href="#">会员中心</a>|</li>
+                    <li><a href="#">帮助中心</a>|</li>
+                    <li><a href="#">在线客服</a>|</li>
+                    <li><a href="#">手机版</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- 主导航模块 -->
+        <div class="xtx-main-nav container">
+            <!-- logo一般使用h1标签包裹 -->
+            <!-- 且需要跳转，因此内部嵌套一个a标签 -->
+            <!-- 为了便于查找需要加上关键字，但是不想展示怎么办
+                设置font-size:0
+            -->
+            <h1 class="logo fl"><a href="#">小兔鲜</a></h1>
+
+            <nav class="fl">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">生鲜</a></li>
+                    <li><a href="#">美食</a></li>
+                    <li><a href="#">餐厨</a></li>
+                    <li><a href="#">电器</a></li>
+                    <li><a href="#">居家</a></li>
+                    <li><a href="#">洗护</a></li>
+                    <li><a href="#">孕婴</a></li>
+                    <li><a href="#">服装</a></li>
+                </ul>
+            </nav>
+
+            <div class="search fl">
+                <!-- 查询栏使用search,其自动内减,placeholder为提示语-->
+                <input type="search" placeholder="搜一搜">
+            </div>
+            <div class="cart fl"></div>
+        </div>
+    </header>
+</body>
+</html>

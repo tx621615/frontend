@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var name = '张某'
+
+	var obj = {
+		name: name,   //键和值相同，es6可以简写  名字  相当于 名字:名字
+		nickname: '波王',
+		age: 999,
+		say: function() {     //可以去掉function
+			 console.log('毒王何在')
+		}
+	}
+	console.log(obj)
+
+	var obj2 = {
+		name,
+		nickname: '波王',
+		age: 999,
+		say() {
+			 console.log('毒王何在')
+			 // return  222
+		}
+	}
+	console.log(obj2)
+	console.log(obj2.say())
+
+
+
+	</script>
+</body>
+</html>

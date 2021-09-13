@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 设置a键:111 -> 获取，设置['b']键:222 -> 获取 -> 通过扩展运算符获取键值
+	var map = new Map()
+	console.log(map)
+	map.set('a', 111)
+	console.log(map.get('a'))
+	//有问题：对象不能直接写需要先复制给变量才可以获取其值
+	map.set(['b'], 222)
+	console.log(map.get(['b']))
+	//没毛病
+	var tmp = ['b']
+	map.set(tmp, 222)
+	console.log(map.get(tmp))
+	console.log('---------')
+	//获取所有键
+	console.log(map.keys())
+	//获取所有值
+	console.log(map.values())
+	</script>
+</body>
+</html>

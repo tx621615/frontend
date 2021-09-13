@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// var arrs = [
+	// 	{id:1, name: 'z3'},
+	// 	{id:2, name: 'l4'},
+	// 	{id:3, name: 'w5'}
+	// ]
+	// console.log(arrs)
+	// //需求：获取name=l4的数组
+	// //解答：传统方式foreach处理
+	// //解答：通过find和findIndex
+	// var arr = arrs.find(function(item){
+	// 		return item.name == 'l4'
+	// })
+	// console.log(arr)
+	// //需求：获取id=2元素的下标
+	// var arr = arrs.findIndex(function(item){
+	// 	return item.id == 2
+	// })
+	// console.log(arr)
+
+	//Array   $arr = new Array
+	Array.prototype.myFind = function(callback) {
+		//callback = function(item) {return item.id = 1}
+		//
+		//this.length    this指调用当前方法的对象   arrs 3个元素
+		for (var i = 0; i < this.length; i++) {
+			//console.log(this[i]) //{id:1, name: 'z3'},
+							     //{id:2, name: 'l4'}
+							     //{id:3, name: 'w5'}
+							     //
+			// function(item){
+			// 	return item.id = 1
+			// }
+			if (callback(this[i])) {
+				// return this[i]  //find
+				return i   //findIndex
+			} 
+					
+		}
+	}
+
+	var arrs = [
+		{id:1, name: 'z3'},
+		{id:2, name: 'l4'},
+		{id:3, name: 'w5'}
+	]
+	var arr = arrs.myFind(function(item){
+		return item.name == 'l4'
+	})
+	console.log(arr)
+	</script>
+</body>
+</html>

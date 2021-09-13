@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+             height: 300px;
+        }
+        .red {
+      /* 相对定位 */
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 1;
+       
+      background-color: red;
+    }
+
+    .green {
+      /* 绝对定位 */
+      position: absolute;
+      top: 100px;
+      left: 100px;
+        z-index: 999;
+      
+      background-color: green;
+
+    }
+
+    .blue {
+      /* 固定定位 */
+      position: fixed;
+      top: 200px;
+      left: 200px;
+        z-index: 2;
+      background-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <!-- 使用z-index属性改变定位层级。这样可以不用改变顺序 -->
+    <!-- 数字越大层级越高 -->
+    <!-- 非定位元素不能这么用 -->
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+</body>
+</html>

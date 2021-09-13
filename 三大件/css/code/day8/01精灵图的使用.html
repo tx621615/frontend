@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 精灵图，多张图片合成的一张大图片，可以减少请求次数，提高性能 */
+        /* 精灵图的使用，如何展示正确的图片
+            1.设置盒子大小和图片大小一致
+            2.设置精灵图为背景图片
+            3.根据想要的小图片的位置，设置整个精灵图的位置，注意是相对整个大盒子的位置，一般是取负值，注意当小图片放到正确位置时，整张大图片的左上角的位置
+            4.背景图片的位置：使用数值需要注意参考系，以div的左上角为原点，把图片的左上角放到对应的位置
+        */
+        .one{
+            width: 24px;
+            height: 24px;
+            /* 背景连写,color,url,repeat,position */
+            background: url(./images/taobao.png) 0 -264px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+    </div>
+</body>
+</html>

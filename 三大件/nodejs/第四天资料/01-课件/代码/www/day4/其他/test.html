@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+</head>
+<body>
+	<script>
+	const getJSON = function(url) {
+	  var promise = new Promise(function(resolve, reject){
+	    var handler = function() {
+	      if (this.readyState !== 4) {
+	        return;
+	      }
+	      if (this.status === 200) {
+	        resolve(this.responseText); //数据处理完成
+	      } else {
+	        reject(this.statusText);    //数据处理出错
+	      }
+	    };
+	    var client = new XMLHttpRequest();
+	    client.open("GET", url);
+	    client.onreadystatechange = handler;
+	    client.send();
+	  });
+	  return promise;
+	};
+
+
+	async function test() {
+		var p1 = await getJSON('http://localhost/test.php');
+		var p2 = await getJSON('http://localhost/test.php');
+	}
+
+	test()
+
+	// var p1 = getJSON('http://localhost/test.php');
+	// var p2 = getJSON('http://localhost/test.php');
+
+	// p1
+	//   .then(function (data) {
+	//   	console.log('hello1')
+	//     console.log(data)
+	//     return p2;
+	//   }, function (err) {
+	//     console.log(err)
+	//   })
+	//   .then(function (data) {
+	//   	console.log('hello2')
+	//     console.log(data)
+	//   }, function (err) {
+	//     console.log(err)
+	//   })
+	</script>
+</body>
+</html> 

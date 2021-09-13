@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            /* 连写
+                color,url,repeat,positon/size
+
+            */
+            /* background-size写到连写的上面会被连写默认值覆盖
+                所以要不写到下面，要不和连写写到一起
+            */
+            /* background-size: 400px 400px; */
+            background: url(./images/1.jpg) no-repeat center center/400px 400px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

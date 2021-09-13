@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1226px;
+            height: 600px;
+            background-color: pink;
+            /* 水平居中一般先考虑使用简单方法，不行在考虑定位 */
+            margin: 0 auto;
+            background-image: url(./images/bg.jpg);
+            position: relative;
+        }
+        .mask{
+            height: 150px;
+            /* 绝对定位的元素脱标，此时不再是独占一行 */
+            width: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            /* 使用绝对定位后div没有了标准流属性，因此此时宽度为0 */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

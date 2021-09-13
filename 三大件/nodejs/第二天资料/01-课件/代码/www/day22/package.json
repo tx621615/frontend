@@ -1,0 +1,12 @@
+{
+  "name": "itcast-php-teacher2",
+  "version": "2.0.0",
+  "description": "this is demo2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": ["itcast","phpdemo"],
+  "author": "phpopenfather",
+  "license": "ISC"
+}

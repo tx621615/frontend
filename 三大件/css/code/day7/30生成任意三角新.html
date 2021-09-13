@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 3.把宽高改为0 */
+            width: 0px;
+            height: 0px;
+            /* background-color: pink; */
+            
+            /* 2.设置当前盒子边框 */
+            /* 四个方向不同的border实际是梯形 */
+            /* 注意要有四才能等分矩形重合区域 */
+            /* 4.把其他三角形颜色设置为透明 */
+            /* 5.改变每个三角形形状可以通过改变边框大小即可 */
+            border-top: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 120px solid blue;
+            border-left: 100px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.创建一个盒子 -->
+    <div></div>
+</body>
+</html>

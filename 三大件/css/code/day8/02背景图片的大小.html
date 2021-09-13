@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background: url(./images/1.jpg) no-repeat;
+        }
+        /* 设置backgroundsize的大小 */
+        div:nth-child(2){
+            /* 方法一，直接设置宽高 */
+            background-size: 400px 300px;
+        }
+        /* 方法二，设置百分比，百分比是基于盒子大小 */
+        div:nth-child(3){
+            background-size: 100% 100%;
+        }
+        /* 以上两种方式可能让图片不成比例，因此需要小心使用，但是用的最多 */
+        /* 方法三：设置属性值为contain,按图片比例等比放大，直到将超过盒子 */
+        div:nth-child(4){
+            background-size: contain;
+        }
+        /* 方法四:设置值为cover，也是等比例放大，直到填满整个盒子，但是可能部分不展示 */
+        div:nth-child(5){
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

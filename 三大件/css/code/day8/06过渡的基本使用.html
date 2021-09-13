@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* 实现样式慢慢变化，常和hover搭配
+                transition
+                    两个属性常用
+                    哪个属性，过渡时间
+                    只有不一样的属性并且设置过渡才有过渡效果
+                    all表示所有属性
+                    
+            */
+            /* transition: all 1s; */
+            /* transition可以设置多个属性，用逗号隔开 */
+            /* 哪个元素需要过渡效果设置哪个 */
+
+            /* transition: width 1s, background-color 3s; */
+        }
+        div:hover{
+            /* transition属性设置到元素本身还是hover状态效果有区别
+                元素本身设置，那么移入移出都有过渡效果
+                hover设置只有移入有效，因为只有移入鼠标才悬停到标签上，移出没有悬停因此不会生效
+            */
+            transition: all 1s;
+            width: 800px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

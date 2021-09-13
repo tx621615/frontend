@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 400px;
+            background-color: pink;
+        }
+        img{
+            /* 解决方法一 */
+            /* vertical-align: bottom; */
+
+            /* 解决方法二 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+	
+    <!-- div中有图片，图片无法对齐div底部，因为div预留要对齐文字基线的距离,div不设高度由img标签撑开 -->
+    <div class="father">
+        <img src="./images/1.jpg" alt="">
+    </div>
+</body>
+</html>

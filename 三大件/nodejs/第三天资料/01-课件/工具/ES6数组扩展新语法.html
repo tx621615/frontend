@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// var arr = [
+	// 	{name:'test1', age: 1},
+	// 	{name:'test2', age: 2},
+	// 	{name:'test3', age: 3}
+	// ];
+
+	// //需求：获取name=test3的元素下标
+	// var index = arr.findIndex(function(item){
+	// 	return item.name == 'test3'
+	// })
+	// console.log(index)
+	// //需求：获取name=test3的元素
+	// var obj = arr.find(function(item){
+	// 	return item.name == 'test3'
+	// })
+	// console.log(obj)
+	// console.log('------------')
+
+	//原理
+	//JS面向对象：封装 、 继承、 多态
+	//JS封装：this 私有的  var 公开的 （类控制成员只保留部分的成员和方法供外部使用 通过修饰符 public private protected）
+	//JS继承：prototype  		      （extend）
+	
+	//var xx = [1,2] 相当于 var xx  = new Array(1,2)   
+	//var xx = 'aaa' 相当于 var xx  = new String('aaa')
+	//Array是系统类
+	//现在通过原先继承，给他增加一个myFind方法
+	Array.prototype.myFind = function(conditionFunc) {
+		//conditionFunc == function(item) { return item.name == 'test3' }
+		//this指调用当前方法的对象（注：下述代码 arr调用myFind）
+		//所以this指arr
+		for (var i = 0; i < this.length; i++) {
+			//判断条件是否成立，成立就返回（注：this指数组，this[i] 数组中的元素）
+			if (conditionFunc(this[i])) {
+				//return this[i]  //相当于 es6中的find
+				return i  		//相当于 es6中的findIndex
+			}
+		}
+	}
+
+	var arr = [
+		{name:'test1', age: 1},
+		{name:'test2', age: 2},
+		{name:'test3', age: 3}
+	];
+	var result = arr.myFind(function(item){
+		return item.name == 'test2'
+	})
+	console.log(result)
+	</script>
+</body>
+</html>

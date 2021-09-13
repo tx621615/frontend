@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视图</title>
+</head>
+<body>
+	 <div><%= username %></h1></div>
+	 <div><%= age %></div>
+	 <div>
+	 	<% if (age>18) { %>
+			妹妹哥哥来了
+		<% } else { %>
+			你走吧
+		<% } %>
+	 </div>
+	 <div>
+		<% orders.forEach(function(order,index) { %>
+			<%= index %> <%= order.title %>
+		<% }) %>
+	 </div>
+</body>
+</html>

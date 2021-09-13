@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            height: 50px;
+            /* text框有默认的margin和padding */
+            /* 自动内减 */
+            box-sizing: border-box;
+            /* vertical-align改变inline或者inline-block无法细微对齐的问题 */
+            /* vertical-align: top; */
+
+            /* 第二种解决方式 浮动后脱标不再是那两个元素*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"><input type="button" value="百度一下">
+</body>
+</html>
