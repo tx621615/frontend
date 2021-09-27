@@ -1,0 +1,5 @@
+! + tab
+ctrl + d  //先选中在添加光标
+ctrl + c + ctrl + v直接在下一行复制
+标签名字 + tab直接生成标签
+ctrl  + enter直接换到下一行

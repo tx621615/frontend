@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 声明一个vue操作的dom对象 -->
+    <div id="app">
+        <p>count的值是: {{ count }}</p>
+        <!-- 如果函数不传参，则可以通过形参获得一个event对象 -->
+        <!-- 如果函数传参，则不会传递event对象，那么此时通过$event可以手动传递一个event对象 -->
+        <button v-on:click="addCount(3, $event)">+3</button>
+    </div>
+
+    <!-- 引入Vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 创建vue的实例对象 -->
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                // 这个count属性会变为vue对象的一个属性，所以通过vue.count可以访问属性
+                count: 3
+            },
+            // methods可以定义处理函数
+            methods:{
+                addCount:function(n, e){
+                    this.count = this.count + n;
+                    if(this.count % 2 === 0){
+                        e.target.style.backgroundColor = "red";
+                    }else
+                    {
+                        e.target.style.backgroundColor = "blue";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

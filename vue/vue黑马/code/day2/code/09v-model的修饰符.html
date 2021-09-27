@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model其实就是设置value，只不过不仅把data设置到value,还能把value设置到data -->
+        <!-- input中输入的值为string,如果想要变成number,加上修饰符.number就可以了 -->
+        <input type="text" v-model.number="n1">  +  <input type="text" v-model.number="n2"> = <span>{{ n1 + n2 }}</span>
+        <hr>
+        <!-- 希望把input的value先去除首尾空格在同步到data,使用.trim修饰符 -->
+        <input type="text" v-model.trim="message">
+        <div>{{ message }}</div>
+        <hr>
+        <!-- 希望不是实时同步到data,而是失去焦点,那么使用.lazy修饰符 -->
+        <input type="text" v-model.lazy="message2">
+        <div>{{ message2 }}</div>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                n1: 0,
+                n2: 0,
+                message: "",
+                message2: ""
+            }
+        })
+    </script>
+</body>
+</html>

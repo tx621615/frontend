@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="username">
+    </div>  
+    <script src="./lib/jquery-v3.6.0.js"></script>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                username: "admin"
+            },
+            // 定义对象形式的侦听器
+            // 方法形式的侦听器，不会一进去网页就触发
+            // 一般先定义为方法形式,如果确实需要则定义为对象形式
+            watch:{
+                username: {
+                    handler(newVal, oldVal){
+                        console.log(newVal, oldVal);
+                    },
+                    // 主要是设置这个属性为true就能立即触发
+                    immediate: true
+                }
+            }
+        })
+    </script>
+</body>
+</html>

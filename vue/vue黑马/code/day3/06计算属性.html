@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.6.12.js"></script>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 所谓计算属性，就是通过源数据计算得到的一个中间值，把其作为了一个vue属性,这样多个地方使用的时候可以复用 -->
+  <div id="app">
+    <div>
+      <span>R：</span>
+      <input type="text" v-model.number="r">
+    </div>
+    <div>
+      <span>G：</span>
+      <input type="text" v-model.number="g">
+    </div>
+    <div>
+      <span>B：</span>
+      <input type="text" v-model.number="b">
+    </div>
+    <hr>
+
+    <!-- 专门用户呈现颜色的 div 盒子 -->
+    <!-- ：style绑定一个样式对象，它的值是一个{ }样式对象 -->
+    <!-- 当前样式对象只包含backgroundColor背景颜色 -->
+    <!-- <div class="box" :style="{ backgroundColor: `rgb(${r}, ${g}, ${b})` }"> -->
+      <div class="box" :style="{ backgroundColor: rgb }">
+      <!-- 模板字符串，es6语法，相当于格式化字符串${}中可以使用js表达式，引用变量，引用对象属性 -->
+      {{ rgb }}
+    </div>
+    <button @click="show">按钮</button>
+  </div>
+
+  <script>
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        // 红色
+        r: 0,
+        // 绿色
+        g: 0,
+        // 蓝色
+        b: 0
+      },
+      // 所有计算属性，都要定义到computed节点之下
+      // 计算属性在定义的时候，要定义成方法格式
+      // 声明的时候是方法形式，最后变为一个vue的属性
+      computed:{
+        rgb(){
+          return `rgb(${this.r}, ${this.g}, ${this.b})`
+        }
+      },
+      methods: {
+        // 点击按钮，在终端显示最新的颜色
+        show() {
+          console.log(this.rgb)
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>

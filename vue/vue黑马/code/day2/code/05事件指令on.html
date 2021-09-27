@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 声明一个vue操作的dom对象 -->
+    <div id="app">
+        <p>count的值是: {{ count }}</p>
+        <!-- 绑定事件回调函数的时候不加扩号无法传参，加扩号可以传参 -->
+        <!-- v-on可以省略为@ -->
+        <!-- 绑定事件把原来的onclick的on去掉就可以了 -->
+        <button v-on:click="addCount(4)">+1</button>
+        <button @click="subCount">-1</button>
+    </div>
+
+    <!-- 引入Vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 创建vue的实例对象 -->
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                // 这个count属性会变为vue对象的一个属性，所以通过vue.count可以访问属性
+                count: 3
+            },
+            // methods可以定义处理函数
+            methods:{
+                addCount:function(n){
+                    this.count = this.count + n;
+                },
+                // 函数的简写，把:function省略
+                subCount() {
+                    // this指向vm对象
+                    this.count--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

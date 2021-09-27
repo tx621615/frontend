@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 声明一个vue操作的dom对象 -->
+    <div id="app">
+        用户名字:{{ username }}
+        <!-- 属性双向绑定指令v-model -->
+        <input type="text" v-model="username">
+        <!-- 单向绑定v-bind -->
+        <input type="text" :value="username">
+        <select v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广州</option>
+        </select>
+    </div>
+
+    <!-- 引入Vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 创建vue的实例对象 -->
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                username: 'zhangsan',
+                city: "北京"
+            }
+        })
+    </script>
+</body>
+</html>

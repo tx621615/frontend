@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 声明一个vue操作的dom对象 -->
+    <!-- 一般只需要使用v-if和v-else -->
+    <div id="app">
+        <div v-if="type == 'A'">优秀</div>
+        <div v-else-if="type == 'B'">良好</div>
+        <div v-else-if="type == 'C'">一般</div>
+        <div v-else>差</div>
+    </div>
+
+    <!-- 引入Vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 创建vue的实例对象 -->
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                type: "A"
+            }
+        })
+    </script>
+</body>
+</html>

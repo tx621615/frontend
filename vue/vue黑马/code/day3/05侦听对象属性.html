@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 绑定的是对象的属性 -->
+        <input type="text" v-model="info.username">
+    </div>  
+    <script src="./lib/jquery-v3.6.0.js"></script>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                info:{
+                    username: "admin"
+                }
+            },
+            //只是侦听对象的某个值通过下面的表达式表示，注意必须要加一层单引号
+            watch:{
+                'info.username'(newValue){
+                    console.log(newValue);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

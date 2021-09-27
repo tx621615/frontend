@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./lib/axios.js"></script>
+    <script>
+        // 1.调用axios方法得到的返回值是Promise对象
+        const result = axios({
+            method: "GET",
+            url: "http://www.liulongbin.top:3006/api/getbooks"
+        });
+        // 注意axios对访问接口返回的数据进行了包装，下面的result对象的data属性才是真正的数据
+        result.then(function(result){
+            console.log(result.data);
+        })
+    </script>
+    <script>
+        // 1.调用axios方法得到的返回值是Promise对象
+        axios({
+            method: "GET",
+            url: "http://www.liulongbin.top:3006/api/getbooks",
+            // get请求传参用params
+            params:{
+                id:1
+            },
+            // post请求传值用data
+            data:{}
+        }).then(function(result){
+            console.log(result.data);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 声明一个vue操作的dom对象 -->
+    <div id="app">
+        <!-- 差值表达式只能用在文本节点，不能用于属性节点 -->
+        <input type="text" v-bind:placeholder="tips">
+        <!-- v-bind简写为: -->
+        <img :src="photo" alt="" style="">
+
+        <!-- 差值表达式和属性绑定使用表达式 -->
+        <!-- 注意差值表达式外部扩号和里面扩号没有空格 -->
+        <div>1+2的结果是: {{ 1 + 2 }}</div>
+        <div>{{ tips.split('').reverse().join('') }}</div>
+        <!-- box也需要加单引号，否则会当成一个data数据 -->
+        <div :title="'box' + index">这是一个div</div>
+    </div>
+
+    <!-- 引入Vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 创建vue的实例对象 -->
+    <script>
+        const vm = new Vue({
+            // 表示vm实例要控制的区域
+            el: "#app",
+            data:{
+                tips: "请输入用户名",
+                photo: "https://pica.zhimg.com/80/v2-eb243facac1a66036c32f78d2c089faf_720w.jpg?source=1940ef5c",
+                index: 3,
+
+            } 
+        })
+    </script>
+</body>
+</html>

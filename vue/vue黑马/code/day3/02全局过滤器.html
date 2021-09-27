@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 过滤器是一个函数，通过管道符把字符串传递给过滤器即可 -->
+    <!-- 管道会把原来的对象作为一个参数传递给过滤器，只有最后一个过滤器作用完，才把其转为string-->
+    <!-- 可以连续多个过滤器串联使用 -->
+    <!-- 过滤器可以传参，但是传参的实参是从第二个形参开始接收 -->
+    <div id="app">
+        <p>message的值是: {{ message | capi}}</p>
+    </div>
+    <div id="app2">
+        <p>message的值是: {{ message | capi}}</p>
+    </div>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        // 定义全局过滤器，第一个参数是过滤器名称，第二个参数是函数内容
+        // 一般都是定义全局过滤器
+        // 如果全局和私有重名，则就近原则
+        Vue.filter('capi', (str) => {return str.charAt(0).toUpperCase() + str.slice(1) + "全局"})
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                message: "hello vue.js"
+            },
+            // 过滤器写在filters域中
+            // 定义到filters是私有过滤器，只能作用于该该VM挂载的元素
+            filters:{
+                capi(val){
+                    var c = val.charAt(0).toUpperCase();
+                    // 从第二个字符截取到最后一个字符
+                    // slice(start, end)---end是索引不包括
+                    const other = val.slice(1);
+                    return c + other;
+                }
+            }
+        });
+        const vm2 = new Vue({
+            el: "#app2",
+            data:{
+                message: "hello vue.js"
+            }
+        });
+    </script>
+</body>
+</html>
